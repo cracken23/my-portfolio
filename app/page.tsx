@@ -47,13 +47,13 @@ export default function Home() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div id = "home" className="min-h-screen bg-gray-50">
       {/* Navigation */}
       <nav className="bg-white shadow-lg fixed w-full top-0 z-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-between items-center py-4">
             <div className="text-xl font-bold text-gray-800">
-              Your Name
+              Kenneth Jezreel
             </div>
             
             {/* Desktop Menu */}
@@ -114,13 +114,13 @@ export default function Home() {
           </p>
           <div className="flex justify-center space-x-6">
             <a 
-              href="mailto:your.email@example.com"
+              href="mailto:kennethjezreel1@gmail.com"
               className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
             >
               Email Me
             </a>
             <a 
-              href="https://linkedin.com/in/yourprofile"
+              onClick={() => window.open(process.env.NEXT_PUBLIC_LINKEDIN_PROFILE_URL, '_blank')}
               className="bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition"
               target="_blank"
               rel="noopener noreferrer"
@@ -142,7 +142,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-8">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <p>&copy; 2025 Your Name. All rights reserved.</p>
+          <p>&copy; 2025 Kenneth Jezreel. All rights reserved.</p>
         </div>
       </footer>
     </div>
