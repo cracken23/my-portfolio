@@ -34,7 +34,7 @@ const Hero = () => {
             View My Work
           </Button>
           <Button onClick={() =>  
-              fetch('/Kenneth Jezreel.pdf')
+              fetch('/Kenneth_Jezreel.pdf')
               .then(res => res.blob())
               .then(blob => saveAs(blob, 'Kenneth_Jezreel_Resume.pdf'))} variant="outline" size="lg" className="px-8 py-3">
             Download my Resume
