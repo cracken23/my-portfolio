@@ -5,22 +5,22 @@ const Skills = () => {
     {
       icon: <Code className="w-8 h-8" />,
       title: "Frontend",
-      skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Vue.js"]
+      skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "HTML5", "CSS3"]
     },
     {
       icon: <Server className="w-8 h-8" />,
       title: "Backend",
-      skills: ["Node.js", "Python", "Express", "FastAPI", "REST APIs"]
+      skills: ["Node.js", "Python", "Express", "Flask"]
     },
     {
       icon: <Database className="w-8 h-8" />,
       title: "Database",
-      skills: ["PostgreSQL", "MongoDB", "Supabase", "Prisma", "Redis"]
+      skills: ["PostgreSQL", "MongoDB", "Supabase"]
     },
     {
       icon: <Globe className="w-8 h-8" />,
       title: "Tools & Platforms",
-      skills: ["Git", "Docker", "AWS", "Vercel", "Figma"]
+      skills: ["Git", "Docker", "AWS", "Vercel"]
     }
   ];
 
@@ -38,11 +38,11 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <div 
               key={category.title} 
-              className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl hover:shadow-lg transition-shadow animate-fade-in hover-scale"
+              className="bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-shadow animate-fade-in hover-scale"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="text-blue-500 mb-4">{category.icon}</div>
-              <h3 className="font-bold text-xl mb-4 text-gray-900">{category.title}</h3>
+              <h3 className="font-bold text-xl mb-4 text-white">{category.title}</h3>
               <div className="space-y-2">
                 {category.skills.map((skill) => (
                   <span 

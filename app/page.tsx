@@ -15,49 +15,17 @@ interface Project {
 }
 
 export default function Home() {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
-
-  const projects: Project[] = [
-    {
-      title: "E-commerce Website",
-      description: "A full-stack e-commerce platform built with React and Node.js",
-      tech: ["React", "Node.js", "MongoDB"],
-      link: "#",
-      github: "#"
-    },
-    {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates",
-      tech: ["Next.js", "Socket.io", "PostgreSQL"],
-      link: "#",
-      github: "#"
-    },
-    {
-      title: "Weather Dashboard",
-      description: "A responsive weather dashboard with location-based forecasts",
-      tech: ["Vue.js", "API Integration", "CSS3"],
-      link: "#",
-      github: "#"
-    }
-  ]
-
-  const skills: string[] = [
-    "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Python", 
-    "MongoDB", "PostgreSQL", "Git", "CSS3", "HTML5", "Tailwind CSS"
-  ]
-
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   return (
     <div id = "home" className="min-h-screen bg-gray-50">
       {/* Navigation */}
       <nav className="bg-white shadow-lg fixed w-full top-0 z-50">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="flex justify-between items-center py-4">
-            <div className="text-xl font-bold text-gray-800">
-              Kenneth Jezreel
-            </div>
+          <div className="flex justify-center py-4">
+            
             
             {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-6">
+            <div className="hidden md:flex space-x-6 items-center">
               <a href="#home" className="text-gray-600 hover:text-blue-600 transition">Home</a>
               <a href="#about" className="text-gray-600 hover:text-blue-600 transition">About</a>
               <a href="#projects" className="text-gray-600 hover:text-blue-600 transition">Projects</a>
@@ -128,7 +96,7 @@ export default function Home() {
               LinkedIn
             </a>
             <a 
-              href="https://github.com/yourusername"
+              onClick={() => window.open(process.env.NEXT_PUBLIC_GITHUB_PROFILE_URL, '_blank')}
               className="bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition"
               target="_blank"
               rel="noopener noreferrer"

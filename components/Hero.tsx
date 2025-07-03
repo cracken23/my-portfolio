@@ -1,14 +1,21 @@
 
-import { Github, Mail, ExternalLink } from 'lucide-react';
+import { Github, Mail} from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { saveAs } from 'file-saver';
 
 const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 px-4">
       <div className="max-w-4xl mx-auto text-center animate-fade-in">
-        <div className="mb-8">
-          <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white text-4xl font-bold shadow-lg">
-            KJ
+        <div className="mb-8 ">
+          <div className="w-32 h-32 mx-auto mb-6 rounded-full p-0.5 shadow-xl hover:shadow-2xl transition-shadow flex items-center justify-center text-white text-4xl font-bold shadow-lg bg-black">
+            <img 
+            className="rounded-full object-cover w-32 h-32 py-0.5 grayscale-35 hover:grayscale-0 transition-all duration-400 onclick:grayscale-0" 
+            src="/profile.jpeg"
+            alt="Logo" 
+            width={32} 
+            height={32} 
+            ></img>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
             Kenneth Jezreel
@@ -23,11 +30,14 @@ const Hero = () => {
         </div>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-          <Button onClick={() => window.open(process.env.NEXT_PUBLIC_GITHUB_PROFILE_URL, '_blank')} size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3">
+          <Button onClick={() => window.open(process.env.NEXT_PUBLIC_GITHUB_PROFILE_URL, '_blank')} size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-10 py-3">
             View My Work
           </Button>
-          <Button variant="outline" size="lg" className="px-8 py-3">
-            Download CV
+          <Button onClick={() =>  
+              fetch('/Kenneth Jezreel.pdf')
+              .then(res => res.blob())
+              .then(blob => saveAs(blob, 'Kenneth_Jezreel_Resume.pdf'))} variant="outline" size="lg" className="px-8 py-3">
+            Download my Resume
           </Button>
         </div>
         

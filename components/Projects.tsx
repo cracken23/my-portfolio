@@ -6,12 +6,12 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with React, Node.js, and Stripe integration. Features include user authentication, shopping cart, and order management.",
+      title: "Knowflow",
+      description: "A research automation tool that generates IEEE-style papers and technical docs from GitHub repositories. Built with Next.js, TypeScript, and Flask, and powered by LLMs via Ollama/OpenRouter APIs.",
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=fill",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      github: "https://www.google.com",
-      live: ""
+      tech: ["Next.js", "Node.js", "TypeScript",],
+      github: "https://www.github.com/cracken23/knowflow",
+      live: "https://knowflow-three.vercel.app/"
     },
     {
       title: "Task Management App",

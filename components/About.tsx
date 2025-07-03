@@ -17,25 +17,25 @@ const About = () => {
             <h2 className="text-4xl font-bold text-gray-900 mb-6">About Me</h2>
             <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
               <p>
-                I'm a passionate full-stack developer with a love for creating digital experiences 
+                I&apos;m a passionate full-stack developer with a love for creating digital experiences 
                 that make a difference. My journey in web development started 3 years ago, and 
-                I've been constantly learning and evolving ever since.
+                I&apos;ve been constantly learning and evolving ever since.
               </p>
               <p>
                 I believe in writing clean, maintainable code and staying up-to-date with the 
-                latest technologies. When I'm not coding, you'll find me exploring new frameworks, 
+                latest technologies. When I&apos;m not coding, you&apos;ll find me exploring new frameworks, 
                 contributing to open-source projects, or sharing knowledge with the developer community.
               </p>
               <p>
                 My goal is to build applications that not only function flawlessly but also 
-                provide exceptional user experiences. I'm always excited to take on new challenges 
+                provide exceptional user experiences. I&apos;m always excited to take on new challenges 
                 and collaborate with like-minded individuals.
               </p>
             </div>
           </div>
           
           <div className="grid grid-cols-2 gap-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            {stats.map((stat, index) => (
+            {stats.map((stat) => (
               <div 
                 key={stat.label}
                 className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl text-center hover:shadow-md transition-shadow hover-scale"

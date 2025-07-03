@@ -33,16 +33,16 @@ const Contact = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology
+            I&apos;m always open to discussing new opportunities, interesting projects, or just having a chat about technology
           </p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="animate-fade-in">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Let's start a conversation</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Let&apos;s start a conversation</h3>
             <p className="text-gray-700 mb-8">
               Whether you have a project in mind, want to collaborate, or just want to say hello, 
-              I'd love to hear from you. Drop me a message and I'll get back to you as soon as possible.
+              I&apos;d love to hear from you. Drop me a message and I&apos;ll get back to you as soon as possible.
             </p>
             
             <div className="space-y-4">
