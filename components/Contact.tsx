@@ -10,25 +10,25 @@ const Contact = () => {
     {
       icon: <Mail className="w-5 h-5" />,
       title: "Email",
-      value: "john.developer@email.com",
-      href: "mailto:john.developer@email.com"
+      value: "kennethjezreel1@gmail.com",
+      href: "mailto:kennethjezreel1@gmail.com"
     },
     {
       icon: <Phone className="w-5 h-5" />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+91 8850175023",
+      href: "tel:+918850175023"
     },
     {
       icon: <MapPin className="w-5 h-5" />,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Mumbai, India",
       href: "#"
     }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
+    <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 bottom-5">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
@@ -68,18 +68,12 @@ const Contact = () => {
             </CardHeader>
             <CardContent>
               <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-1 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      First Name
+                      Your Name
                     </label>
-                    <Input placeholder="John" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Last Name
-                    </label>
-                    <Input placeholder="Doe" />
+                    <Input placeholder="Enter Your Name" />
                   </div>
                 </div>
                 
@@ -87,14 +81,7 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Email
                   </label>
-                  <Input type="email" placeholder="john.doe@example.com" />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Subject
-                  </label>
-                  <Input placeholder="Let's work together!" />
+                  <Input type="email" placeholder="email@example.com" />
                 </div>
                 
                 <div>

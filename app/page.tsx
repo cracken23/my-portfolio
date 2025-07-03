@@ -4,15 +4,16 @@ import About from '@/components/About'
 import Hero from '@/components/Hero'
 import Projects from '@/components/Projects'
 import Skills from '@/components/Skills'
+import Contact from '@/components/Contact'
 import { useState } from 'react'
 
-interface Project {
-  title: string
-  description: string
-  tech: string[]
-  link: string
-  github: string
-}
+// interface Project {
+//   title: string
+//   description: string
+//   tech: string[]
+//   link: string
+//   github: string
+// }
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -59,26 +60,29 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
+      <section className='pt-5 bg-black'></section>
       <Hero />
       {/* Skills Section */}
+      <section id = "skills" className="pt-0.25 bg-black">
       <Skills />
+      </section>
 
       {/* About Section */}
-      <section id = "about">
+      <section id = "about" className='pt-0.25 bg-black'>
         <About />
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gradient-to-br from-gray-50 to-gray-200">
+      <section id="projects" className="pt-0.25 bg-black">
       <Projects />
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
+      {/* <section id="contact" className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-8">Get In Touch</h2>
           <p className="text-gray-600 text-lg mb-8">
-            I'm always open to discussing new opportunities and interesting projects.
+            I&apos;m always open to discussing new opportunities and interesting projects.
           </p>
           <div className="flex justify-center space-x-6">
             <a 
@@ -105,6 +109,9 @@ export default function Home() {
             </a>
           </div>
         </div>
+      </section> */}
+      <section id="contact" className='py-0.25 bg-black'>
+      <Contact />
       </section>
 
       {/* Footer */}
