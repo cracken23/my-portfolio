@@ -73,6 +73,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the r
 
 ## Contact
 
-- **Email:** your.email@example.com
-- **LinkedIn:** [linkedin.com/in/your_username](https://linkedin.com/in/your_username)
-- **GitHub:** [github.com/your_username](https://github.com/your_username)
+- **Email:** kennethjezreel1@gmail.com
+- **LinkedIn:** [linkedin.com/in/kenneth-jezreel](https://www.linkedin.com/in/kenneth-jezreel-132750257/)
+- **GitHub:** [github.com/cracken23](https://github.com/cracken23)
