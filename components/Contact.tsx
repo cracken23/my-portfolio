@@ -28,19 +28,19 @@ const Contact = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 bottom-5">
+    <section id="contact" className="py-20 bg-gray-50 dark:bg-neutral-900">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Get In Touch</h2>
+          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
             I&apos;m always open to discussing new opportunities, interesting projects, or just having a chat about technology
           </p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12">
           <div className="animate-fade-in">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Let&apos;s start a conversation</h3>
-            <p className="text-gray-700 mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Let&apos;s start a conversation</h3>
+            <p className="text-gray-700 dark:text-gray-300 mb-8">
               Whether you have a project in mind, want to collaborate, or just want to say hello, 
               I&apos;d love to hear from you. Drop me a message and I&apos;ll get back to you as soon as possible.
             </p>
@@ -50,27 +50,27 @@ const Contact = () => {
                 <a
                   key={info.title}
                   href={info.href}
-                  className="flex items-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow hover-scale"
+                  className="flex items-center p-4 bg-white dark:bg-neutral-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 transform hover:-translate-y-1"
                 >
                   <div className="text-blue-500 mr-4">{info.icon}</div>
                   <div>
-                    <div className="font-medium text-gray-900">{info.title}</div>
-                    <div className="text-gray-600">{info.value}</div>
+                    <div className="font-medium text-gray-900 dark:text-white">{info.title}</div>
+                    <div className="text-gray-600 dark:text-gray-300">{info.value}</div>
                   </div>
                 </a>
               ))}
             </div>
           </div>
           
-          <Card className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <Card className="animate-fade-in bg-white dark:bg-neutral-800" style={{ animationDelay: '0.2s' }}>
             <CardHeader>
-              <CardTitle>Send me a message</CardTitle>
+              <CardTitle className="text-gray-900 dark:text-white">Send me a message</CardTitle>
             </CardHeader>
             <CardContent>
               <form className="space-y-6">
                 <div className="grid md:grid-cols-1 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Your Name
                     </label>
                     <Input placeholder="Enter Your Name" />
@@ -78,14 +78,14 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Email
                   </label>
                   <Input type="email" placeholder="email@example.com" />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Message
                   </label>
                   <Textarea 

@@ -1,4 +1,5 @@
 
+
 import { Award, Coffee, Code2, Heart } from 'lucide-react';
 
 const About = () => {
@@ -10,12 +11,12 @@ const About = () => {
   ];
 
   return (
-    <section id = "about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-white dark:bg-neutral-900">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">About Me</h2>
-            <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">About Me</h2>
+            <div className="space-y-4 text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
               <p>
                 I&apos;m a passionate full-stack developer with a love for creating digital experiences 
                 that make a difference. My journey in web development started 3 years ago, and 
@@ -38,13 +39,13 @@ const About = () => {
             {stats.map((stat) => (
               <div 
                 key={stat.label}
-                className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl text-center hover:shadow-md transition-shadow hover-scale"
+                className="bg-gray-50 dark:bg-neutral-800 p-6 rounded-xl text-center shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-1"
               >
                 <div className="text-blue-500 flex justify-center mb-3">
                   {stat.icon}
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-                <div className="text-gray-600 text-sm">{stat.label}</div>
+                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{stat.value}</div>
+                <div className="text-gray-600 dark:text-gray-300 text-sm">{stat.label}</div>
               </div>
             ))}
           </div>

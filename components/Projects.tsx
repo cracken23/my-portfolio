@@ -32,11 +32,11 @@ const Projects = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-200">
+    <section id="projects" className="py-20 bg-gray-50 dark:bg-neutral-900">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Featured Projects</h2>
+          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
             Here are some of my recent projects that showcase my skills and passion for development
           </p>
         </div>
@@ -45,21 +45,21 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={project.title} 
-              className="group overflow-hidden hover:shadow-xl transition-all duration-300 animate-fade-in hover-scale-105"
+              className="group overflow-hidden bg-white dark:bg-neutral-800 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="object-none overflow-hidden scale-105 relative h-48 w-full bottom-5 aspect-ratio-16/9">
+              <div className="relative h-48 w-full overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-48 object-fill group-hover:scale-107 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-black/0 bg-opacity-0 group-hover:bg-black/20 transition-colors duration-300 pointer-events-none" />
+                <div className="absolute inset-0 bg-black/20 bg-opacity-0 group-hover:bg-black/40 transition-colors duration-300 pointer-events-none" />
               </div>
               
               <CardHeader>
-                <CardTitle className="text-xl font-bold">{project.title}</CardTitle>
-                <CardDescription className="text-gray-600">
+                <CardTitle className="text-xl font-bold text-gray-900 dark:text-white">{project.title}</CardTitle>
+                <CardDescription className="text-gray-600 dark:text-gray-300">
                   {project.description}
                 </CardDescription>
               </CardHeader>
@@ -69,7 +69,7 @@ const Projects = () => {
                   {project.tech.map((tech) => (
                     <span 
                       key={tech}
-                      className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
+                      className="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300 text-sm rounded-full"
                     >
                       {tech}
                     </span>
