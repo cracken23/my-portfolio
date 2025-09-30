@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 
@@ -11,6 +14,31 @@ type ProjectsProps = {
 };
 
 const Projects = ({ isActive = false }: ProjectsProps) => {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [locallyActive, setLocallyActive] = useState(false);
+
+  useEffect(() => {
+    const element = sectionRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setLocallyActive(entry?.isIntersecting ?? false);
+      },
+      {
+        rootMargin: "-35% 0px -35% 0px",
+        threshold: [0.1, 0.25, 0.5],
+      }
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
+
+  const shouldHighlight = isActive || locallyActive;
+
   const projects = [
     {
       title: "Knowflow",
@@ -44,10 +72,11 @@ const Projects = ({ isActive = false }: ProjectsProps) => {
   return (
     <section
       id="projects"
+      ref={sectionRef}
       className={cn(
         "relative overflow-hidden rounded-3xl border border-border/40 bg-gradient-to-br from-slate-50/95 via-white/95 to-fuchsia-50/80 px-4 py-24 shadow-[0_60px_170px_-90px_rgba(148,163,184,0.6)] transition duration-500 sm:px-6",
         "dark:from-background dark:via-background dark:to-background/70",
-        isActive
+        shouldHighlight
           ? "border-primary/50 shadow-[0_70px_190px_-95px_rgba(59,130,246,0.4)] ring-1 ring-primary/15 dark:shadow-[0_75px_210px_-100px_rgba(59,130,246,0.36)]"
           : "hover:border-border/60"
       )}
@@ -57,7 +86,7 @@ const Projects = ({ isActive = false }: ProjectsProps) => {
           "pointer-events-none absolute inset-0 rounded-[inherit] blur-3xl transition-opacity duration-700",
           "bg-[radial-gradient(circle_at_top,_rgba(139,92,246,0.35),_transparent_55%),radial-gradient(circle_at_bottom,_rgba(14,165,233,0.3),_transparent_60%),radial-gradient(circle_at_left,_rgba(236,72,153,0.28),_transparent_58%),radial-gradient(circle_at_right,_rgba(59,130,246,0.28),_transparent_58%)]",
           "dark:bg-[radial-gradient(circle_at_top,_rgba(139,92,246,0.55),_transparent_58%),radial-gradient(circle_at_bottom,_rgba(14,165,233,0.48),_transparent_62%),radial-gradient(circle_at_left,_rgba(236,72,153,0.42),_transparent_60%),radial-gradient(circle_at_right,_rgba(59,130,246,0.44),_transparent_60%)]",
-          isActive ? "opacity-100" : "opacity-0"
+          shouldHighlight ? "opacity-100" : "opacity-0"
         )}
       />
       <div className="pointer-events-none absolute inset-0 -z-10">
@@ -79,7 +108,7 @@ const Projects = ({ isActive = false }: ProjectsProps) => {
               key={project.title}
               className={cn(
                 "group relative overflow-hidden border bg-background/80 shadow-[0_35px_110px_-70px_rgba(15,23,42,0.75)] backdrop-blur transition duration-300",
-                isActive
+                shouldHighlight
                   ? "border-primary/40 shadow-[0_45px_140px_-85px_rgba(59,130,246,0.45)] ring-1 ring-primary/10"
                   : "border-border/50 hover:border-border/70 hover:shadow-[0_45px_140px_-85px_rgba(15,23,42,0.85)]"
               )}
@@ -88,7 +117,7 @@ const Projects = ({ isActive = false }: ProjectsProps) => {
               <div
                 className={cn(
                   "absolute inset-0 bg-gradient-to-br from-white/6 via-transparent to-transparent opacity-0 transition-opacity duration-300",
-                  isActive ? "opacity-100" : "group-hover:opacity-100"
+                  shouldHighlight ? "opacity-100" : "group-hover:opacity-100"
                 )}
               />
 
@@ -125,7 +154,7 @@ const Projects = ({ isActive = false }: ProjectsProps) => {
                       key={tech}
                       className={cn(
                         "rounded-full border bg-background/70 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground transition",
-                        isActive
+                        shouldHighlight
                           ? "border-primary/30 text-foreground"
                           : "border-border/60 group-hover:border-border group-hover:text-foreground"
                       )}
@@ -142,7 +171,7 @@ const Projects = ({ isActive = false }: ProjectsProps) => {
                   size="sm"
                   className={cn(
                     "flex-1 border-border/70 bg-background/80 text-sm transition",
-                    isActive ? "border-primary/40 text-foreground" : "hover:border-foreground"
+                    shouldHighlight ? "border-primary/40 text-foreground" : "hover:border-foreground"
                   )}
                   onClick={() => window.open(project.github, "_blank")}
                 >
@@ -153,7 +182,7 @@ const Projects = ({ isActive = false }: ProjectsProps) => {
                   size="sm"
                   className={cn(
                     "flex-1 bg-gradient-to-r from-rose-400 via-pink-500 to-orange-400 text-sm text-white shadow-lg transition hover:shadow-xl dark:from-sky-500 dark:via-blue-500 dark:to-indigo-500",
-                    isActive && "shadow-[0_30px_90px_-60px_rgba(244,114,182,0.55)]"
+                    shouldHighlight && "shadow-[0_30px_90px_-60px_rgba(244,114,182,0.55)]"
                   )}
                   onClick={() => window.open(project.live, "_blank")}
                 >
