@@ -50,22 +50,22 @@ const Projects = ({ isActive = false }: ProjectsProps) => {
       live: "https://knowflow-three.vercel.app/",
     },
     {
-      title: "Task Management Hub",
+      title: "Yoom",
       description:
-        "A collaborative workspace with real-time syncing, team dashboards, and kanban boards. Crafted for hybrid teams to stay aligned.",
+        "A real-time video calling app with seamless screen sharing, chat, and meeting recording. Built for effortless virtual collaboration. ",
       image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
-      tech: ["React", "Firebase", "Tailwind"],
-      github: "https://github.com/cracken23",
-      live: "https://github.com/cracken23",
+      tech: ["Next.js", "Tailwind", "WebRTC"],
+      github: "https://www.github.com/cracken23/zoom-clone",
+      live: "https://yoom.kennethjezreel.in/",
     },
     {
-      title: "Weather Vision",
+      title: "NGO Website",
       description:
-        "A responsive weather intelligence dashboard with geolocation, radar overlays, and time-series analytics for any city worldwide.",
+        "A responsive website for a non-profit organization, also featuring a donation system.",
       image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&h=600&fit=crop",
-      tech: ["Vue", "TypeScript", "Chart.js"],
-      github: "https://github.com/cracken23",
-      live: "https://github.com/cracken23",
+      tech: ["React", "TypeScript", "HTML5", "CSS"],
+      github: "https://www.github.com/cracken23/Ngo-Website1",
+      live: "https://www.geriatrichcf.com/",
     },
   ];
 
@@ -116,7 +116,7 @@ const Projects = ({ isActive = false }: ProjectsProps) => {
             >
               <div
                 className={cn(
-                  "absolute inset-0 bg-gradient-to-br from-white/6 via-transparent to-transparent opacity-0 transition-opacity duration-300",
+                  "pointer-events-none absolute inset-0 bg-gradient-to-br from-white/6 via-transparent to-transparent opacity-0 transition-opacity duration-300",
                   shouldHighlight ? "opacity-100" : "group-hover:opacity-100"
                 )}
               />
