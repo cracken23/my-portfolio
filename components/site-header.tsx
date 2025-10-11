@@ -27,6 +27,8 @@ export function SiteHeader() {
     { label: "About", href: "#about" },
   ];
 
+  const resumeUrl = process.env.NEXT_PUBLIC_RESUME_URL ?? "/Kenneth_Jezreel.pdf";
+
   const auraStyles: Record<string, string> = {
     home: "bg-[radial-gradient(circle_at_center,_rgba(244,114,182,0.55),_transparent_68%)]",
     skills: "bg-[radial-gradient(circle_at_center,_rgba(56,189,248,0.5),_transparent_68%)]",
@@ -96,12 +98,14 @@ export function SiteHeader() {
             </Link>
           ))}
           <Link
-            href="/Kenneth_Jezreel.pdf"
+            href={resumeUrl}
             className={cn(
               "group relative inline-flex items-center justify-center overflow-hidden rounded-full px-3 py-1.5 text-sm transition duration-300",
               isMounted ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
             )}
             style={{ transitionDelay: `${100 + navigation.length * 80}ms` }}
+            target={resumeUrl.startsWith("http") ? "_blank" : undefined}
+            rel={resumeUrl.startsWith("http") ? "noopener noreferrer" : undefined}
           >
             <span className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,_rgba(45,212,191,0.45),_transparent_65%)] opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:blur-md group-hover:scale-105" />
             <span className="relative z-10 font-medium tracking-[0.12em] uppercase text-muted-foreground group-hover:text-foreground">

@@ -10,6 +10,23 @@ type HeroProps = {
 };
 
 const Hero = ({ isActive = false }: HeroProps) => {
+  const resumeUrl = process.env.NEXT_PUBLIC_RESUME_URL ?? "/Kenneth_Jezreel.pdf";
+
+  const handleResumeDownload = () => {
+    if (!resumeUrl) {
+      return;
+    }
+
+    if (/^https?:\/\//i.test(resumeUrl)) {
+      window.open(resumeUrl, "_blank", "noopener,noreferrer");
+      return;
+    }
+
+    fetch(resumeUrl)
+      .then((res) => res.blob())
+      .then((blob) => saveAs(blob, "Kenneth_Jezreel_Resume.pdf"));
+  };
+
   return (
     <section
       id="home"
@@ -61,11 +78,7 @@ const Hero = ({ isActive = false }: HeroProps) => {
               <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </Button>
             <Button
-              onClick={() =>
-                fetch("/Kenneth_Jezreel.pdf")
-                  .then((res) => res.blob())
-                  .then((blob) => saveAs(blob, "Kenneth_Jezreel_Resume.pdf"))
-              }
+              onClick={handleResumeDownload}
               variant="outline"
               size="lg"
               className="flex-1 border-border/60 bg-background/80 backdrop-blur transition hover:border-foreground/40 hover:bg-background sm:flex-none"
